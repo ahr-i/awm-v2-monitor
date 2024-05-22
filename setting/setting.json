@@ -1,0 +1,13 @@
+{
+    "server_port":"5080",
+    "listen_port":"5044",
+    "log_byte":4000,
+    "service":{
+        "location_manager":"127.0.0.1"
+    },
+    "health_check":{
+        "use":true,
+        "time":5,
+        "timeout":2
+    }
+}
