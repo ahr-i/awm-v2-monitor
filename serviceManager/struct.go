@@ -10,3 +10,8 @@ type ServiceInfo struct {
 }
 
 var mutex sync.Mutex
+
+type listenFormat struct {
+	ServiceName string `json:"service_name"`
+	Message     string `json:"message"`
+}
