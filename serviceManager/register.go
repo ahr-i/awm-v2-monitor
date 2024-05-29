@@ -1,12 +1,13 @@
 package serviceManager
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/ahr-i/awm-v2-monitor/src/logging"
 )
 
-func Register(service string, ip string, port string) {
+func Register(service string, ip string, port string) error {
 	mutex.Lock()
 	defer mutex.Unlock()
 
@@ -15,13 +16,13 @@ func Register(service string, ip string, port string) {
 	if !exist {
 		rejectLog(service, address)
 
-		return
+		return errors.New("Not an authorized service.")
 	}
 
 	if serviceInfo.IP != ip {
 		rejectLog(service, address)
 
-		return
+		return errors.New("Not an authorized service.")
 	}
 
 	Service[service] = ServiceInfo{
@@ -29,6 +30,8 @@ func Register(service string, ip string, port string) {
 		Address: append(serviceInfo.Address, address),
 	}
 	logging.Logger.Info("Service register: " + service + " / Address: " + address)
+
+	return nil
 }
 
 func rejectLog(service string, address string) {

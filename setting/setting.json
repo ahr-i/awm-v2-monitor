@@ -3,7 +3,11 @@
     "listen_port":"5044",
     "log_byte":4000,
     "service":{
-        "location_manager":"127.0.0.1"
+        "location_manager":"127.0.0.1",
+        "authentication_server":"127.0.0.1",
+        "community_server":"127.0.0.1",
+        "chat_server":"127.0.0.1",
+        "user_manager":"127.0.0.1"
     },
     "health_check":{
         "use":true,
