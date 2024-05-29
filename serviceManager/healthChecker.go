@@ -22,7 +22,7 @@ func healthCheck(checkTime int, timeout int) {
 					newAddress = append(newAddress, address)
 				} else {
 					msg := fmt.Sprintf("Delete service address: %s", address)
-					logging.Logger.Info(msg)
+					logging.Logger.Warn(msg)
 				}
 			}
 			serviceInfo.Address = newAddress
