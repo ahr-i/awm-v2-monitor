@@ -1,6 +1,6 @@
 {
-    "server_port":"5080",
-    "listen_port":"5044",
+    "server_port":"9080",
+    "listen_port":"9044",
     "log_byte":4000,
     "service":{
         "location_manager":"127.0.0.1",
